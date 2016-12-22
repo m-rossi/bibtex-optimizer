@@ -47,6 +47,9 @@ entries = re.split('\n\n@', file_content, flags=re.MULTILINE)
 # store filePath
 filePath = os.path.split(args.filename)[0]
 
+# prepare list for modified entries
+new_entries = []
+
 # iterate entries
 for entry in entries:
     # check if file is attached to entry
@@ -131,8 +134,11 @@ for entry in entries:
         else:
             print('File ' + match.group(0) + ' does not exist.')
 
+    # build new entries
+    new_entries.append(entry)
+
 # reconstruct file contents
-file_content = '\n\n@'.join(entries)
+file_content = '\n\n@'.join(new_entries)
 
 # write contents to file
 fh = open(args.filename, 'w')
