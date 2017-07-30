@@ -5,5 +5,6 @@ setup(name='bibtexoptimizer',
       packages=['bibtexoptimizer'],
       author='Marco Rossi',
       author_email='developer@marco-rossi.com',
-      url='https://github.com/m-rossi/bibtex-optimizer'
+      url='https://github.com/m-rossi/bibtex-optimizer',
+      scripts=['scripts/bibtex-optimizer']
       )
